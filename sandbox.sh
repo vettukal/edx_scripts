@@ -16,26 +16,6 @@ if [[ `lsb_release -rs` != "12.04" ]]; then
    exit;
 fi
 
-##
-## Set ppa repository source for gcc/g++ 4.8 in order to install insights properly
-##
-sudo apt-get install -y python-software-properties
-sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
-
-##
-## Update and Upgrade apt packages
-##
-sudo apt-get update -y
-sudo apt-get upgrade -y
-
-##
-## Install system pre-requisites
-##
-##sudo apt-get install -y build-essential software-properties-common curl git-core libxml2-dev libxslt1-dev python-pip libmysqlclient-dev python-apt python-dev libxmlsec1-dev libfreetype6-dev swig gcc-4.8 g++-4.8
-##sudo pip install --upgrade pip==7.1.2
-##sudo pip install --upgrade setuptools==18.3.2
-##sudo -H pip install --upgrade virtualenv==13.1.2
-
 
 
 ## Did we specify an openedx release?
