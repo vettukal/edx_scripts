@@ -1,0 +1,20 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div id = 'twitterFeed'></div>
+        <script>
+        function myCallback(dataWeGotViaJsonp){
+			console.log('data we got',dataWeGotViaJsonp);
+            var text = '';
+            var len = dataWeGotViaJsonp.length;
+            for(var i=0;i<len;i++){
+                twitterEntry = dataWeGotViaJsonp[i];
+                text += '<p><img src = "' + twitterEntry.user.profile_image_url_https +'"/>' + twitterEntry['text'] + '</p>'
+            }
+            document.getElementById('twitterFeed').innerHTML = text;
+        }
+        </script>
+        <script type="text/javascript" src="http://api.themoviedb.org/3/movie/281957/videos?api_key=18eaaa0283fb870aefbe7ba910f97cd6&callback=myCallback"></script>
+    </body>
+</html>
